@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+    <title>School Teacher Blackboard</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="header">
+    <h1 class="header__title">BlackBoard Teacher Listing</h1>
+</header>
+
+<section class="teacher-list">
+    <h2 class="teacher-list__heading">Here is a list of our teachers:</h2>
+    <nav class="teacher-list-nav">
+        <ul class="teacher-list-links">
+            <li class="teacher-list-links__teacher" th:each="teacher:${school.teacher}">
+                <a class="teacher-list-links__link" th:href="@{'/teachers/'+ ${teacher.id}}" th:text="${teacher.long}">Armand Campbell</a>
+            </li>
+            <li class="teacher-list-links__teacher" th:each="teacher:${school.teacher}">
+                <a class="teacher-list-links__link" th:href="@{'/teachers/'+ ${teacher.id}}" th:text="${teacher.long}">Scrooge Donald</a>
+            </li>
+            <li class="teacher-list-links__teacher" th:each="teacher:${school.teacher}">
+                <a class="teacher-list-links__link" th:href="@{'/teachers/'+ ${teacher.id}}" th:text="${teacher.long}">Mitch Money</a>
+            </li>
+            <li class="teacher-list-links__teacher" th:each="teacher:${school.teacher}">
+                <a class="teacher-list-links__link" th:href="@{'/teachers/'+ ${teacher.id}}" th:text="${teacher.long}">Sauvage Randy</a>
+            </li>
+
+
+        </ul>
+    </nav>
+    <a class="nav__home" href="/schools">back to schools</a>
+</section>
+
+</body>

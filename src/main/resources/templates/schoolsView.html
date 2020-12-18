@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+    <title>School Teacher Blackboard</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="header">
+    <h1 class="header__title">Welcome to the Teacher's Blackboard</h1>
+    <h2 th:text="${school.location}">Cleveland</h2>
+</header>
+<section class="subject-list">
+    <h2 class="subject-list__heading">Here is a list of our subjects:</h2>
+    <nav class="subject-list-nav">
+        <ul class="subject-list-links">
+            <li class="subject-list-links__subject" th:each="subject:${school.subjects}">
+                <a class="subject-list-links__link" th:href="@{'/subjects/'+ ${subject.id}}" th:text="${subject.title}">The Greatness from within</a>
+            </li>
+            <li class="subject-list-links__subject" th:each="subject:${school.subjects}">
+                <a class="subject-list-links__link" th:href="@{'/subjects/'+ ${subject.id}}" th:text="${subject.title}">Shape Shifting Style Bender</a>
+            </li>
+
+        </ul>
+    </nav>
+</section>
+    <h2 th:text="${school.location}">Columbus</h2>
+</header>
+<section class="subject-list">
+    <h2 class="subject-list__heading">Here is a list of our subjects:</h2>
+    <nav class="subject-list-nav">
+        <ul class="subject-list-links">
+            <li class="subject-list-links__subject" th:each="subject:${school.subjects}">
+                <a class="subject-list-links__link" th:href="@{'/subjects/'+ ${subject.id}}" th:text="${subject.title}">The Key to Financial Freedom</a>
+            </li>
+            <li class="subject-list-links__subject" th:each="subject:${school.subjects}">
+                <a class="subject-list-links__link" th:href="@{'/subjects/'+ ${subject.id}}" th:text="${subject.title}">Shape Shifting Style Bender</a>
+            </li>
+
+                </ul>
+    </nav>
+    <a class="nav__home" href="/schools">back to schools</a>
+
+</section>
+
+
+</body>
+</html>
